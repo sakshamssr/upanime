@@ -1,7 +1,7 @@
-﻿beautifulsoup4==4.10.0
 Django==4.2.2
+beautifulsoup4==4.10.0
 asgiref==3.5.2
 requests==2.30.0
 db-sqlite3
-sqlparser==0.4.3
-tzdata==2022.7
+sqlparser
+tzdata
