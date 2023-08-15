@@ -30,7 +30,7 @@ def get_chapter_link(chapter_id,chapter_no):
         except:
             continue
 
-        chapter_link[chapter_no].append({mangatitle[0]:manga_chapter_image[0]})
+        chapter_link[chapter_no].append({"alt":mangatitle[0],"img":manga_chapter_image[0]})
 
     return chapter_link
 
