@@ -2,3 +2,4 @@
 Django==4.2.2
 requests==2.30.0
 db-sqlite3
+sqlparser==0.4.3
