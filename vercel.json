@@ -11,7 +11,7 @@
         },
         {
             "src": "build_files.sh",
-            "use": "@vercel/static-build",
+            "use": "@vercel/static-build"
         }
     ],
     "routes": [
