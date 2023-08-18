@@ -18,15 +18,7 @@ def get_minfo(chapterid):
     main=soup.find_all(class_="chapter-name text-nowrap")
     updatedate=soup.find(class_="stre-value")
 
-    #print("Details Class",details)
-    #print("Details Value",detailsvalue)
-
-    #print(image)
-
-    #print("MainClass",main)
-
-    #name=title.find_all('title')
-    #print(name)
+    desc=soup.find(class_="panel-story-info-description")
 
     a=[]
 
@@ -38,7 +30,7 @@ def get_minfo(chapterid):
     author=[]
     genres=[]
 
-    name2={"title":"","author":[],"status":"","updated":"","genres":[],"alternative":[],"chapters":[]}
+    name2={"title":"","author":[],"status":"","description":"","updated":"","genres":[],"alternative":[],"chapters":[]}
 
     mname=str(image).split('alt="')
     fname=mname[1].split('" class')
@@ -54,10 +46,10 @@ def get_minfo(chapterid):
     #print(mauthor)
 
     mstatus=str(detailsvalue[2]).split('<td class="table-value">')
-    #print(mstatus[1].split('</td>')[0])
+
+    mdesc=str(desc).split("<h3>Description :</h3>")[1].split("</div>")[0]
 
     mupdated=str(updatedate).split('">')
-    # print(mupdated[1].split('</')[0])
 
     mgenres=str(detailsvalue[3]).split('genre-')
     #print(mgenres)
@@ -77,7 +69,7 @@ def get_minfo(chapterid):
     name2["genres"]=genres
     name2["updated"]=mupdated[1].split('</')[0]
     name2["status"]=mstatus[1].split('</td>')[0]
-    
+    name2["description"]=mdesc.replace("\n","")
     name2["alternative"]=falternatives[0].split(';')
 
     for titlei in main:
@@ -108,20 +100,4 @@ def get_minfo(chapterid):
         name2["chapters"].append({mangalink[0]:mangatitle[0]})
     
     return name2
-    #print("D:",d)
 
-    '''for d1 in range(len(d)):
-        detal=str(d[d1]).split("</i>")
-        detalf=detal[1].split("</td>")
-        print(detalf[0])'''
-
-    #print(chaptername)
-    #print(chapterlink)
-
-    #print("\nFinal\n")
-
-    # print(name2)
-    #print(len(name2["chapters"]))
-    '''for i in name2:
-        print(i)'''
-#print(get_minfo("pb992910"))
