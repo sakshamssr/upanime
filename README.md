@@ -51,6 +51,7 @@ print(data)
         "string"
     ],
     "status": "string",
+    "description": "string",
     "updated": "string",
     "genres": [
         "string"
