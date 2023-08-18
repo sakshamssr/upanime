@@ -1,4 +1,4 @@
-Django==4.2.2
+Django
 beautifulsoup4==4.10.0
 requests==2.30.0
 db-sqlite3
