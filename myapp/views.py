@@ -6,13 +6,23 @@ from django.http import JsonResponse
 
 # Create your views here.
 
+def home(request):
+    return render(request,"index.html")
+
+def about(request):
+    return render(request,"about.html")
+
+def contact(request):
+    return render(request,'contact.html')
+
+def services(request):
+    return render(request,'services.html')
+
 def showresults(request, para):
     # print(para)
     result=get_mdetails(str(para))
     # print(result)
     response=JsonResponse(result,status=200)
-    # data={"result1":result}
-    # return render(request, 'index.html', {'mangaresult' : data})
     return response
 
 def showinfo(request, para):
@@ -20,8 +30,6 @@ def showinfo(request, para):
     result=get_minfo(str(para))
     #print(result)
     response=JsonResponse(result,status=200)
-    # data={"result1":result}
-    # return render(request, 'index.html', {'mangaresult' : data})
     return response
 
 
@@ -30,7 +38,5 @@ def showlink(request, para,para2):
     result=get_chapter_link(str(para),str(para2))
     #print(result)
     response=JsonResponse(result,status=200)
-    # data={"result1":result}
-    # return render(request, 'index.html', {'mangaresult' : data})
     return response
 

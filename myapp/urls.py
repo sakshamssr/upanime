@@ -1,9 +1,12 @@
 from django.urls import path
-from .views import showresults,showinfo,showlink
+from . import views
 
 urlpatterns=[
-    # path('manga/',home,name="home"),
-    path('manga/<str:para>', showresults, name = 'searchitem'),
-    path('manga/info/<str:para>', showinfo, name = 'searchinfo'),
-    path('manga/info/<str:para>/<str:para2>', showlink, name = 'searchimages'),
+    path('',views.home,name='home'),
+    path('about/',views.about,name='about'),
+    path('contact/',views.contact,name='contact'),
+    path('services',views.services,name='services'),
+    path('manga/<str:para>', views.showresults, name = 'searchitem'),
+    path('manga/info/<str:para>', views.showinfo, name = 'searchinfo'),
+    path('manga/info/<str:para>/<str:para2>', views.showlink, name = 'searchimages'),
 ]
