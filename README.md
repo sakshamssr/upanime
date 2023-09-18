@@ -1,4 +1,5 @@
-# UpAnime - Modern Search Engine API for Manga.
+# UpAnime
+Modern Search Engine API for Manga.
 
 ## Search
 Details regarding the usage of the search function.
