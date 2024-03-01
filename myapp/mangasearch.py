@@ -39,25 +39,34 @@ def get_mdetails(searchterm):
         link.append(link1[0])
 
         if ("chapmanganato" in link1[0]):
-            primary=link1[0].split("https://chapmanganato.com/manga-")
+            primary=link1[0].split("https://chapmanganato.to/manga-")
         elif("manganato" in link1[0]):
             primary=link1[0].split("https://manganato.com/manga-")
-
+        
         try:
             author0=str(title0[5]).split('">')
             author.append(author0[0])
         except:
-            author0=str(title0[4]).split('">')
-            author.append(author0[0])
+            try:
+                author0=str(title0[4]).split('">')
+                author.append(author0[0])
+            except:
+                author0=str(title0[3]).split('">')
+                author.append(author0[0])
 
         try:
             updated_on0=str(title0[5]).split('Updated : ')
             updated_on1=updated_on0[1].split("</span>")
             updated_on.append(updated_on1[0])
         except:
-            updated_on0=str(title0[4]).split('Updated : ')
-            updated_on1=updated_on0[1].split("</span>")
-            updated_on.append(updated_on1[0])
+            try:
+                updated_on0=str(title0[4]).split('Updated : ')
+                updated_on1=updated_on0[1].split("</span>")
+                updated_on.append(updated_on1[0])
+            except:
+                updated_on0=str(title0[3]).split('Updated : ')
+                updated_on1=updated_on0[1].split("</span>")
+                updated_on.append(updated_on1[0])
 
         name2[primary[1]]={"title":title1[0],"author":author0[0],"updated_on":updated_on1[0]}
     return name2
